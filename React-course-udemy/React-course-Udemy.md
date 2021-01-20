@@ -165,3 +165,41 @@ const app = () => { ... }
 ```
 44. Using the useState() Hook for State Manipulation
 45. Stateless vs Stateful Components
+- Stateless components are simple functional component without having a local state
+- Stateful component can contains the state object and event handling function, user actions as well.
+46. Passing Method References Between Components
+47. Adding Two Way Binding
+```
+Person.js
+return(
+    <input type="text" onChange={props.changed}>
+)
+
+App.js
+nameChangedHandler(event) => {
+    this,setState({
+        persons: [
+            {name: event.target.value, age: 26}
+        ]
+    })
+}
+
+render() {
+    <Person changed={this.nameChangeHandler}></Person>
+}
+```
+48. Adding Styling with Stylesheets
+49. Working with Inline Styles
+```
+render(){
+    const style = {
+        font: 'inherit',
+        border: 1 px solid red
+    }
+
+    return (
+        <button style={style}>
+    )
+}
+
+```
