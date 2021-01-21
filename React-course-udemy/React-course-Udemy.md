@@ -203,3 +203,174 @@ render(){
 }
 
 ```
+50. [OPTIONAL] Assignment Solution
+51. Useful Resources & Links
+
+## Section 4: Working with Lists and Conditionals
+52. Module Introduction
+53. Rendering Content Conditionally
+```
+Use ternary operator in render > return method.
+
+state ={
+    showPersons: false;
+}
+
+tooglePersonHandler = () => {
+    const doesShow = this.state.showPErsons;
+    this.setState({ showPersond: !doesShow })
+}
+
+return(
+    <button onClick={this.tooglePersonHandler}></button>
+    {this.state.showPErson === true ?
+        <div>
+        </div> : null
+    }
+)
+```
+54. Handling Dynamic Content "The JavaScript Way"
+```
+Take logic outside render > return method.
+
+state ={
+    showPersons: false;
+}
+
+let persons = null;
+
+if(this.state.showPersons){
+    persons = (
+        <div>
+        </div> 
+    )
+}
+
+return(
+    <button onClick={this.tooglePersonHandler}></button>
+    {persons}
+)
+```
+55. Outputting Lists (Intro)
+56. Outputting Lists
+ ```
+ Use .map() to loop array.
+
+state ={
+    persons: [
+        {name: 'one'},
+        {name: 'two'},
+        {name: 'three'}
+    ]
+}
+
+let persons = null;
+
+if(this.state.showPersons){
+    persons = (
+        <div>
+        {this.state.persons.map(el => {
+            return <Person name={el.name}/>
+        })}
+        </div> 
+    )
+}
+
+return(
+    <button onClick={this.tooglePersonHandler}></button>
+    {persons}
+)
+```
+57. Lists & State
+```
+state ={
+    persons: [
+        {name: 'one'},
+        {name: 'two'},
+        {name: 'three'}
+    ]
+}
+
+deletePersonHandler = (personIndex) => {
+    const persons = this.state.persons;
+    persons.splice(personIndex, 1);
+    //Set state of persons to new/updated persons
+    this.state({persons: persons})
+}
+
+if(this.state.showPersons){
+    persons = (
+        <div>
+        {this.state.persons.map((el, index) => {
+            return <Person 
+            click={this.deletePersonHandler(index)}
+            name={el.name}/>
+        })}
+        </div> 
+    )
+}
+```
+58. Updating State Immutably
+```
+
+deletePersonHandler = (personIndex) => {
+    //Spread operator create new array
+    const persons = [...this.state.persons];
+    persons.splice(personIndex, 1);
+    //Set state of persons to new/updated persons
+    this.state({persons: persons})
+}
+```
+59. Lists & Keys
+```
+if(this.state.showPersons){
+    persons = (
+        <div>
+        {this.state.persons.map((el, index) => {
+            return <Person 
+            click={this.deletePersonHandler(index)}
+            name={el.name}
+            key={person.id}/>
+        })}
+        </div> 
+    )
+}
+```
+60. Flexible Lists
+```
+nameChangedHandler = ( event, id) => {
+    const personIndex = this.state.persons.findIndex(p => {
+        return p.id === id;
+    })
+
+    const person = {
+        ...this.state.persons[personIndex]
+    }
+
+    person.name = event.target.value;
+
+    const persons = [...this.state.persons];
+    persons[personIndex] = person;
+
+    this.setState({
+        persons: [
+            {persons: persons}
+        ]
+    })
+}
+
+if(this.state.showPersons){
+    persons = (
+        <div>
+        {this.state.persons.map((el, index) => {
+            return <Person 
+            click={this.deletePersonHandler(index)}
+            name={el.name}
+            key={person.id}
+            changed={(event) => this.nameChangedHandler(event, person.id )}/>
+        })}
+        </div> 
+    )
+}
+```
+61. Wrap Up
