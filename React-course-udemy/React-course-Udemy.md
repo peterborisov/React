@@ -374,3 +374,72 @@ if(this.state.showPersons){
 }
 ```
 61. Wrap Up
+
+## Section 5: Styling React Components & Elements
+64. Module Introduction
+65. Outlining the Problem Set
+66. Setting Styles Dynamically
+67. Setting Class Names Dynamically
+```
+const classes = ['red', 'blue'].join(' ');
+
+<p className={classes></p>
+```
+68. Adding and Using Radium
+```
+render() {
+    const style = {
+        ':hover': {
+            color: black
+        }
+    }
+}
+```
+69. Using Radium for Media Queries
+```
+import Radium from 'radium';
+
+const style = {
+    '@media (min-width: 500px)'{
+        width:'450px'
+    }
+}
+
+export default Radium(myComponent)
+```
+70. Introducing Styled Components
+71. More on Styled Components
+72. Styled Components & Dynamic Styles
+73. Working with CSS Modules
+```
+CSS Modules are a relatively new concept (you can dive super-deep into them here: 
+https://github.com/css-modules/css-modules). 
+With CSS modules, you can write normal CSS code and make sure, 
+that it only applies to a given component.
+
+Using CSS Modules in create-react-app Projects: 
+https://medium.com/nulogy/how-to-use-css-modules-with-create-react-app-9e44bec2b5c2
+
+More information about CSS Modules: 
+https://github.com/css-modules/css-modules
+
+```
+74. CSS Modules & Media Queries
+75. More on CSS Modules
+
+## Section 6: Debugging React Apps
+77. Module Introduction
+78. Understanding Error Messages
+79. Finding Logical Errors by using Dev Tools & Sourcemaps
+80. Working with the React Developer Tools
+81. Using Error Boundaries (React 16+)
+82. Wrap Up
+83. Useful Resources & Links
+```
+Error Boundaries:
+https://reactjs.org/docs/error-boundaries.html
+Chrome Devtool Debugging: 
+
+https://developers.google.com/web/tools/chrome-devtools/javascript/
+```
+## Section 7: Diving Deeper into Components & React Internals
