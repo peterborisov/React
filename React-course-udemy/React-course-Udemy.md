@@ -443,3 +443,7 @@ Chrome Devtool Debugging:
 https://developers.google.com/web/tools/chrome-devtools/javascript/
 ```
 ## Section 7: Diving Deeper into Components & React Internals
+84. Module Introduction
+85. A Better Project Structure
+86. Splitting an App Into Components
+87. Comparing Stateless and Stateful Components
