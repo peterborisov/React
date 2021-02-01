@@ -447,3 +447,18 @@ https://developers.google.com/web/tools/chrome-devtools/javascript/
 85. A Better Project Structure
 86. Splitting an App Into Components
 87. Comparing Stateless and Stateful Components
+```
+In a component, state is data we import — typically to show the user —
+that is subject to change.
+Stateful components are keeping track of changing data, 
+while stateless components print out what is given to them via props, 
+or they always render the same thing.
+```
+88. Class-based vs Functional Components
+<img src='./assets/class-vs-func-component.png' width='500'>
+
+89. Class Component Lifecycle Overview
+- only available in class-based components
+<img src='./assets/lifecycle-component.png' width='500'>
+
+90. Component Creation Lifecycle in Action
