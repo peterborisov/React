@@ -1,4 +1,4 @@
-## Microservices arhitecture basic project.
+## Microservices architecture basic project.
 #### Client
 React client to consume services.
 User can create and display Posts. Every post can have multiple comments.
