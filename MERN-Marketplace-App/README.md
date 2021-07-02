@@ -1,9 +1,8 @@
 # MERN Marketplace App
 
 ## Client
-====================================================
-React app setup
------------------
+
+### React app setup
 React routing  > npm install react-router-dom<br/>
 Redux setup > npm i redux react-redux <br>
 Redux-devtools-extension<br/>
@@ -16,7 +15,7 @@ Redux-devtools-extension<br/>
 	5. provide redux store to the entire app
 
 ## Server
-===================================================
+
 Entry point is server.js > routes > controllers 
 
 Server setup 
@@ -49,7 +48,7 @@ DB setup(MongoDB)
 
 
 ## User registration
-=================================================
+
 1. Create register page
 2. User enter name, email, password
 3. Send information using axios to the backend in req.body
