@@ -8,22 +8,23 @@ import NewEntryForm from './components/NewentryForm';
 import DisplayBalance from './components/DisplayBalance';
 import DisplayBalances from './components/DisplayBalances';
 import EntryLines from './components/EntryLines';
-import EditItem from './components/EditItem'
+import EditItem from './components/EditItem';
+
 let initialEntries =
-  [
-    {
-      id: 1, description: 'Work income', value: 100, isExpense: false
-    },
-    {
-      id: 2, description: 'Water bill', value: 20, isExpense: true
-    },
-    {
-      id: 3, description: 'Rent', value: 200, isExpense: true
-    },
-    {
-      id: 4, description: 'Power bill', value: 50, isExpense: false
-    }
-  ]
+    [
+        {
+            id: 1, description: 'Work income', value: 100, isExpense: false
+        },
+        {
+            id: 2, description: 'Water bill', value: 20, isExpense: true
+        },
+        {
+            id: 3, description: 'Rent', value: 200, isExpense: true
+        },
+        {
+            id: 4, description: 'Power bill', value: 50, isExpense: false
+        }
+    ]
 
 function App() {
   const [entries, setEntries] = useState(initialEntries);
@@ -107,9 +108,9 @@ function App() {
         value={total}
         color='blue'
       />
-      <DisplayBalances 
-      expenseTotal={expenseTotal} 
-      incomeTotal={incomeTotal}
+      <DisplayBalances
+        expenseTotal={expenseTotal}
+        incomeTotal={incomeTotal}
       />
       <EntryLines
         entries={entries}

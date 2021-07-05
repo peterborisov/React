@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Segment, Grid, Icon } from 'semantic-ui-react';
-import EditItem from './EditItem';
 
 const EntryLine = (props) => {
     const { id, description, value, isExpense = false, deleteEntry, setIsOpen, editEntry } = props;
