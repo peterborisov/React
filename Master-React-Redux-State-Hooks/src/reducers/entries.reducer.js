@@ -17,7 +17,7 @@ export default reducer;
 let initialEntries =
     [
         {
-            id: 1, description: 'Work income', value: 100, isExpense: false
+            id: 1, description: 'Work income redux', value: 100, isExpense: false
         },
         {
             id: 2, description: 'Water bill', value: 20, isExpense: true

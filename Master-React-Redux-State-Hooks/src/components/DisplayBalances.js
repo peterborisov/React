@@ -1,34 +1,22 @@
 import React from 'react';
-import { Segment, Grid } from 'semantic-ui-react';
-import DisplayBalance from './DisplayBalance'
-const DisplayBalances = (props) => {
-  const { expenseTotal, incomeTotal } = props;
+import { Grid, Segment } from 'semantic-ui-react';
+import DisplayBalance from './DisplayBalance';
+
+function DisplayBalances({ expenseTotal, incomeTotal }) {
   return (
     <Segment textAlign='center'>
       <Grid columns={2} divided>
         <Grid.Row>
           <Grid.Column>
-            <DisplayBalance
-              size='tiny'
-              color='green'
-              textAlign='left'
-              label='Income:'
-              value={incomeTotal}
-            />
+            <DisplayBalance title='Income' value={incomeTotal} color='green' />
           </Grid.Column>
           <Grid.Column>
-            <DisplayBalance
-              size='tiny'
-              color='red'
-              textAlign='left'
-              label='Expenses:'
-              value={expenseTotal}
-            />
+            <DisplayBalance title='Expenses' value={expenseTotal} color='red' />
           </Grid.Column>
         </Grid.Row>
       </Grid>
     </Segment>
-  )
+  );
 }
 
 export default DisplayBalances;

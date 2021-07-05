@@ -5,7 +5,8 @@ const configStore = () => {
     return createStore(
         combineReducers({
             entries: entriesReducer
-        }));
+        })
+    );
 }
 
 export default configStore;

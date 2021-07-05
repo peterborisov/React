@@ -1,27 +1,34 @@
 import React from 'react';
 import { Form } from 'semantic-ui-react';
-import SaveOrCancel from './ButtonSaveOrCancel';
-import EntryForma from './EntryForma';
+import ButtonSaveOrCancel from './ButtonSaveOrCancel';
+import EntryForm from './EntryForm';
+import useEntryDetails from '../hooks/useEntryDetails';
 
-const  NewEntryForm = (props) => {
-    const { addEntry, description, value, isExpense, setDescription, setValue, setIsExpense } = props;
-   
+function NewEntryForm() {
+  const {
+    description,
+    setDescription,
+    value,
+    setValue,
+    isExpense,
+    setIsExpense,
+    addEntry,
+  } = useEntryDetails();
 
-    return (
-        <Form unstackable>
-            <EntryForma
-                description={description}
-                value={value}
-                isExpense={isExpense}
-                setDescription={setDescription}
-                setValue={setValue}
-                setIsExpense={setIsExpense}
-            />
-            <SaveOrCancel
-                addEntry={addEntry}
-            />
-        </Form>
-    )
+  return (
+    <Form unstackable>
+      <EntryForm
+        description={description}
+        value={value}
+        isExpense={isExpense}
+        setDescription={setDescription}
+        setValue={setValue}
+        setIsExpense={setIsExpense}
+      />
+
+      <ButtonSaveOrCancel addEntry={addEntry} />
+    </Form>
+  );
 }
 
 export default NewEntryForm;
