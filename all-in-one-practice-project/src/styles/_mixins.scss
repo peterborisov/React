@@ -1,0 +1,7 @@
+@mixin theme($theme, $width, $height) {
+    background: $theme;
+    width: $width;
+    height: $height;
+    display: inline-block;
+    margin: 2%;
+}
