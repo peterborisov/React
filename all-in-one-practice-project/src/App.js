@@ -1,4 +1,3 @@
-import './App.css';
 import Nav from './components/Navigation/Nav';
 import MainSection from './components/MainSection/MainSection'
 function App() {
