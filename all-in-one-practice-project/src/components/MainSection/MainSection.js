@@ -31,10 +31,12 @@ class MainSection extends React.Component {
             <div className='wrapper'>
                 <h1>it is {this.state.date.toLocaleTimeString()}</h1>
                 < Form />
-            </div> <div className='wrapper'>
+            </div> 
+            <div className='wrapper'>
                 <h1>it is {this.state.date.toLocaleTimeString()}</h1>
                 < Form />
-            </div> <div className='wrapper'>
+            </div> 
+            <div className='wrapper'>
                 <h1>it is {this.state.date.toLocaleTimeString()}</h1>
                 < Form />
             </div> 

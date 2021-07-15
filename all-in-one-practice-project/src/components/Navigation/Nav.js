@@ -5,7 +5,6 @@ const Nav = (props) => {
     //render multiple elements
     const navLinks = ['Home', 'About', 'Skills', 'Contacts'];
     const displayLinks = navLinks.map(el => {
-        console.log( <li key={el}>{el}</li>)
         return <li key={el}>{el}</li>
     })
     return (

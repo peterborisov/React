@@ -1,3 +1,6 @@
+npm install semantic-ui-react semantic-ui-css
+npm install @reduxjs/toolkit react-redux
+
 Functional components
 Class components
 State and lifecycle
@@ -8,3 +11,4 @@ npm i sass-loader node-sass --save-dev
 - partials
 - variables
 - mixins
+

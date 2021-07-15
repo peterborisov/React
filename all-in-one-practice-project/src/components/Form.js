@@ -1,11 +1,6 @@
 import React from 'react';
 
 const Form = (props) => {
-
-    const handleChange = (ev) => {
-         return 'asas'
-    }
-    
     return (
         <>
             <form action="">
