@@ -1,12 +1,16 @@
 import { Modal, Button } from 'semantic-ui-react';
-import EntryForma from './EntryForma'
+import ItemForm from './ItemForm';
+
 const EditItem = (props) => {
     const { isOpen, setIsOpen, description, value, isExpense, setDescription, setValue, setIsExpense } = props;
+    const isOpen = () => {
+        setIsOpen(false)
+    }
     return (
         <Modal open={isOpen}>
             <Modal.Header>Edit item</Modal.Header>
             <Modal.Content>
-                <EntryForma
+                <ItemForm
                     description={description}
                     value={value}
                     isExpense={isExpense}
@@ -16,8 +20,8 @@ const EditItem = (props) => {
                 />
             </Modal.Content>
             <Modal.Actions>
-                <Button onClick={() => setIsOpen(false)}>Close</Button>
-                <Button onClick={() => setIsOpen(false)} primary>Save</Button>
+                <Button onClick={isOpen}>Close</Button>
+                <Button onClick={isOpen} primary>Save</Button>
             </Modal.Actions>
         </Modal>
     )

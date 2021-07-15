@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { addEntryRedux, updateEntryRedux } from '../actions/entries.actions';
+import { addItemRedux, updateItemRedux } from '../actions/items.actions';
 import { v4 as uuidv4 } from 'uuid';
 import { closeEditModal } from '../actions/modals.actions';
 
-function useEntryDetails(desc = '', val = '', isExp = true) {
+function useItemDetails(desc = '', val = '', isExp = true) {
   const [description, setDescription] = useState(desc);
   const [value, setValue] = useState(val);
   const [isExpense, setIsExpense] = useState(isExp);
@@ -16,9 +16,9 @@ function useEntryDetails(desc = '', val = '', isExp = true) {
     setIsExpense(isExp);
   }, [desc, val, isExp]);
 
-  function updateEntry(id) {
+  function updateItem(id) {
     dispatch(
-      updateEntryRedux(id, {
+      updateItemRedux(id, {
         id,
         description,
         value,
@@ -29,9 +29,9 @@ function useEntryDetails(desc = '', val = '', isExp = true) {
     resetValues();
   }
 
-  function addEntry() {
+  function addItem() {
     dispatch(
-      addEntryRedux({
+      addItemRedux({
         id: uuidv4(),
         description,
         value,
@@ -54,9 +54,9 @@ function useEntryDetails(desc = '', val = '', isExp = true) {
     setValue,
     isExpense,
     setIsExpense,
-    addEntry,
-    updateEntry,
+    addItem,
+    updateItem,
   };
 }
 
-export default useEntryDetails;
+export default useItemDetails;

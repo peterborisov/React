@@ -1,55 +1,57 @@
 import { useEffect, useState } from 'react';
 import { Container } from 'semantic-ui-react';
 import './App.css';
-import DisplayBalance from './components/DisplayBalance';
-import DisplayBalances from './components/DisplayBalances';
-import EntryLines from './components/EntryLines';
+import Balance from './components/Balance/Balance';
+import Balances from './components/Balance/Balances';
+import Items from './components/Item/Items';
 import MainHeader from './components/MainHeader';
-import ModalEdit from './components/ModalEdit';
-import NewEntryForm from './components/NewentryForm';
+import EditItemModal from './components/Item/EditItemModal';
+import NewItem from './components/Item/NewItem';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllEntries } from './actions/entries.actions';
+import { getAllItems } from './actions/items.actions';
 
 function App() {
   const [incomeTotal, setIncomeTotal] = useState(0);
   const [expenseTotal, setExpenseTotal] = useState(0);
   const [total, setTotal] = useState(0);
-  const [entry, setEntry] = useState({});
+  const [item, setItem] = useState({});
   const { isOpen, id } = useSelector((state) => state.modals);
-  const entries = useSelector((state) => state.entries);
+  const items = useSelector((state) => state.items);
+
   useEffect(() => {
-    const index = entries.findIndex((entry) => entry.id === id);
-    setEntry(entries[index]);
-  }, [isOpen, id, entries]);
+    const index = items.findIndex((item) => item.id === id);
+    setItem(items[index]);
+  }, [isOpen, id, items]);
 
   useEffect(() => {
     let totalIncomes = 0;
     let totalExpenses = 0;
-    entries.map((entry) => {
-      if (entry.isExpense) {
-        return (totalExpenses += Number(entry.value));
+    items.map((item) => {
+      if (item.isExpense) {
+        return (totalExpenses += Number(item.value));
       }
-      return (totalIncomes += Number(entry.value));
+      return (totalIncomes += Number(item.value));
     });
     setTotal(totalIncomes - totalExpenses);
     setExpenseTotal(totalExpenses);
     setIncomeTotal(totalIncomes);
-  }, [entries]);
+  }, [items]);
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getAllEntries());
+    dispatch(getAllItems());
   }, [dispatch]);
+
   return (
     <Container>
       <MainHeader title='Budget' />
-      <DisplayBalance title='Your Balance:' value={total} size='small' />
-      <DisplayBalances expenseTotal={expenseTotal} incomeTotal={incomeTotal} />
+      <Balance title='Your Balance:' value={total} size='small' />
+      <Balances expenseTotal={expenseTotal} incomeTotal={incomeTotal} />
       <MainHeader title='History' type='h3' />
-      <EntryLines entries={entries} />
+      <Items items={items} />
       <MainHeader title='Add new transaction' type='h3' />
-      <NewEntryForm />
-      <ModalEdit isOpen={isOpen} {...entry} />
+      <NewItem />
+      <EditItemModal isOpen={isOpen} {...item} />
     </Container>
   );
 }

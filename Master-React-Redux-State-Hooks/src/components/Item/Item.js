@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
 import { Grid, Icon, Segment } from 'semantic-ui-react';
 import { useDispatch } from 'react-redux';
-import { removeEntryRedux } from '../actions/entries.actions';
-import { openEditModal } from '../actions/modals.actions';
-function EntryLine({ id, description, value, isExpense = false }) {
+import { removeItemRedux } from '../../actions/items.actions';
+import { openEditModal } from '../../actions/modals.actions';
+
+function Item({ id, description, value, isExpense = false }) {
   const dispatch = useDispatch();
   return (
     <Fragment>
@@ -25,7 +26,7 @@ function EntryLine({ id, description, value, isExpense = false }) {
               <Icon
                 name='trash'
                 bordered
-                onClick={() => dispatch(removeEntryRedux(id))}
+                onClick={() => dispatch(removeItemRedux(id))}
               />
             </Grid.Column>
           </Grid.Row>
@@ -35,4 +36,4 @@ function EntryLine({ id, description, value, isExpense = false }) {
   );
 }
 
-export default EntryLine;
+export default Item;
