@@ -1,7 +1,7 @@
 import React from 'react';
 import { Statistic } from 'semantic-ui-react';
 
-function Balance(props) {
+const Balance = (props) => {
   const { title, value, color, size } = props;
   const ifIsNan = (value) => {
     return isNaN(value) ? 0 : value

@@ -1,4 +1,4 @@
-import modalTypes from '../actions/modals.actions';
+import modalTypes from '../actions/modals';
 
 const reducer = (state = { isOpen: false }, action) => {
   switch (action.type) {

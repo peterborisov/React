@@ -2,9 +2,9 @@ import React from 'react';
 import { Form } from 'semantic-ui-react';
 import ButtonSaveOrCancel from '../ButtonSaveOrCancel';
 import ItemForm from './ItemForm';
-import useItemDetails from '../../hooks/useItemDetails';
+import itemDetails from '../../hooks/itemDetails';
 
-function NewItem() {
+const NewItem = () => {
   const {
     description,
     setDescription,
@@ -13,7 +13,7 @@ function NewItem() {
     isExpense,
     setIsExpense,
     addItem,
-  } = useItemDetails();
+  } = itemDetails();
 
   return (
     <Form unstackable>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Segment } from 'semantic-ui-react';
 import Balance from './Balance';
 
-function Balances(props) {
+const Balances = (props) => {
   const { expenseTotal, incomeTotal } = props;
   return (
     <Segment textAlign='center'>

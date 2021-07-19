@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
-function ButtonSaveOrCancel({ addItem }) {
+
+const ButtonSaveOrCancel = ( props ) => {
+  const { addItem } = props;
   return (
     <Button.Group style={{ marginTop: 20 }}>
       <Button>Cancel</Button>

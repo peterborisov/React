@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Checkbox, Form, Segment } from 'semantic-ui-react';
 
-function ItemForm(props) {
+const ItemForm = (props) => {
   const { description, value, isExpense, setDescription, setValue, setIsExpense, } = props;
 
   return (

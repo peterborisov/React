@@ -1,14 +1,14 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Button, Modal } from 'semantic-ui-react';
-import { closeEditModal } from '../../actions/modals.actions';
-import useItemDetails from '../../hooks/useItemDetails';
+import { closeEditModal } from '../../actions/modals';
+import itemDetails from '../../hooks/itemDetails';
 import ItemForm from './ItemForm';
 
-function EditItemModal(props) {
+const EditItemModal = (props) => {
   const { isOpen, description, value, isExpense, id } = props;
   const dispatch = useDispatch();
-  const itemUpdate = useItemDetails(description, value, isExpense);
+  const itemUpdate = itemDetails(description, value, isExpense);
   return (
     <Modal open={isOpen}>
       <Modal.Header>Edit item</Modal.Header>

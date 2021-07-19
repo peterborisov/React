@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { addItemRedux, updateItemRedux } from '../actions/items.actions';
+import { addItemAction, updateItemAction } from '../actions/items';
 import { v4 as uuidv4 } from 'uuid';
-import { closeEditModal } from '../actions/modals.actions';
+import { closeEditModal } from '../actions/modals';
 
-function useItemDetails(desc = '', val = '', isExp = true) {
+const ItemDetails = (desc = '', val = '', isExp = true) => {
   const [description, setDescription] = useState(desc);
   const [value, setValue] = useState(val);
   const [isExpense, setIsExpense] = useState(isExp);
@@ -16,9 +16,9 @@ function useItemDetails(desc = '', val = '', isExp = true) {
     setIsExpense(isExp);
   }, [desc, val, isExp]);
 
-  function updateItem(id) {
+  const updateItem = (id) => {
     dispatch(
-      updateItemRedux(id, {
+      updateItemAction(id, {
         id,
         description,
         value,
@@ -29,9 +29,9 @@ function useItemDetails(desc = '', val = '', isExp = true) {
     resetValues();
   }
 
-  function addItem() {
+  const addItem = () => {
     dispatch(
-      addItemRedux({
+      addItemAction({
         id: uuidv4(),
         description,
         value,
@@ -41,7 +41,7 @@ function useItemDetails(desc = '', val = '', isExp = true) {
     resetValues();
   }
 
-  function resetValues() {
+  const resetValues = () => {
     setDescription('');
     setValue('');
     setIsExpense(true);
@@ -59,4 +59,4 @@ function useItemDetails(desc = '', val = '', isExp = true) {
   };
 }
 
-export default useItemDetails;
+export default ItemDetails;

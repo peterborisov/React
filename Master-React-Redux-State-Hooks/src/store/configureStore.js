@@ -1,7 +1,7 @@
 import { combineReducers, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import itemsReducer from '../reducers/items.reducers';
-import modalsReducer from '../reducers/modals.reducers';
+import itemsReducer from '../reducers/items';
+import modalsReducer from '../reducers/modals';
 
 const configureStore = () => {
   const store = createStore(

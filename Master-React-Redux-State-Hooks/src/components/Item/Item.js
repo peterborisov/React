@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
 import { Grid, Icon, Segment } from 'semantic-ui-react';
 import { useDispatch } from 'react-redux';
-import { removeItemRedux } from '../../actions/items.actions';
-import { openEditModal } from '../../actions/modals.actions';
+import { removeItemAction } from '../../actions/items';
+import { openEditModal } from '../../actions/modals';
 
-function Item({ id, description, value, isExpense = false }) {
+const Item = (props) => {
+  const { id, description, value, isExpense = false } = props;
   const dispatch = useDispatch();
   return (
     <Fragment>
@@ -26,7 +27,7 @@ function Item({ id, description, value, isExpense = false }) {
               <Icon
                 name='trash'
                 bordered
-                onClick={() => dispatch(removeItemRedux(id))}
+                onClick={() => dispatch(removeItemAction(id))}
               />
             </Grid.Column>
           </Grid.Row>

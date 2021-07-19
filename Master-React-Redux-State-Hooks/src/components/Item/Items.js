@@ -2,8 +2,8 @@ import React from 'react';
 import { Container } from 'semantic-ui-react';
 import Item from './Item';
 
-function Items(props) {
-  const { items } = props
+const Items = (props) => {
+  const { items } = props;
   return (
     <Container>
       {items.map((item) => (

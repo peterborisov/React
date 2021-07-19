@@ -8,9 +8,8 @@ import MainHeader from './components/MainHeader';
 import EditItemModal from './components/Item/EditItemModal';
 import NewItem from './components/Item/NewItem';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllItems } from './actions/items.actions';
 
-function App() {
+const App = () => {
   const [incomeTotal, setIncomeTotal] = useState(0);
   const [expenseTotal, setExpenseTotal] = useState(0);
   const [total, setTotal] = useState(0);
@@ -36,11 +35,6 @@ function App() {
     setExpenseTotal(totalExpenses);
     setIncomeTotal(totalIncomes);
   }, [items]);
-
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getAllItems());
-  }, [dispatch]);
 
   return (
     <Container>
