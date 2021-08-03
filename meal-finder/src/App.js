@@ -1,10 +1,11 @@
 import './App.css';
-import MenuResult from './components/menuResult';
+import MealResult from './components/mealResult';
+import SearchResult from './components/searchResult';
 
 function App() {
   return (
     <div className="App">
-          <MenuResult />
+        <SearchResult />
     </div>
   );
 }
