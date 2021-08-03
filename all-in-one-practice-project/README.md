@@ -1,3 +1,5 @@
+### App to practise random stuff
+
 npm install semantic-ui-react semantic-ui-css
 npm install @reduxjs/toolkit react-redux
 
