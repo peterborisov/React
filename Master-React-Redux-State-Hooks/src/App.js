@@ -6,10 +6,11 @@ import Balances from './components/Balance/Balances';
 import Items from './components/Item/Items';
 import MainHeader from './components/MainHeader';
 import EditItemModal from './components/Item/EditItemModal';
-import NewItem from './components/Item/NewItem';
-import { useDispatch, useSelector } from 'react-redux';
+import CreateItem from './components/Item/CreateItem';
+import { useSelector } from 'react-redux';
 
 const App = () => {
+  //Hooks
   const [incomeTotal, setIncomeTotal] = useState(0);
   const [expenseTotal, setExpenseTotal] = useState(0);
   const [total, setTotal] = useState(0);
@@ -22,14 +23,15 @@ const App = () => {
     setItem(items[index]);
   }, [isOpen, id, items]);
 
+  // Calculate balance
   useEffect(() => {
     let totalIncomes = 0;
     let totalExpenses = 0;
     items.map((item) => {
       if (item.isExpense) {
-        return (totalExpenses += Number(item.value));
+        return (totalExpenses += +item.value);
       }
-      return (totalIncomes += Number(item.value));
+      return (totalIncomes += +item.value);
     });
     setTotal(totalIncomes - totalExpenses);
     setExpenseTotal(totalExpenses);
@@ -44,7 +46,7 @@ const App = () => {
       <MainHeader title='History' type='h3' />
       <Items items={items} />
       <MainHeader title='Add new transaction' type='h3' />
-      <NewItem />
+      <CreateItem />
       <EditItemModal isOpen={isOpen} {...item} />
     </Container>
   );

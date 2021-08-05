@@ -9,7 +9,7 @@ const Balance = (props) => {
   
   return (
     <Statistic size={size} color={color}>
-      <Statistic.Label style={{ texAlign: 'left' }}>{title}</Statistic.Label>
+      <Statistic.Label style={{ texAlign: 'left' }}>{title}{}</Statistic.Label>
       <Statistic.Value>{ifIsNan(value)}</Statistic.Value>
     </Statistic>
   );

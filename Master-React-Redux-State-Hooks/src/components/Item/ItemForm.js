@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Checkbox, Form, Segment } from 'semantic-ui-react';
 
 const ItemForm = (props) => {
   const { description, value, isExpense, setDescription, setValue, setIsExpense, } = props;
 
   return (
-    <Fragment>
+    <>
       <Form.Group widths={3}>
         <Form.Input
           icon='tags'
@@ -33,7 +33,7 @@ const ItemForm = (props) => {
           onChange={() => setIsExpense((oldState) => !oldState)}
         />
       </Segment>
-    </Fragment>
+    </>
   );
 }
 

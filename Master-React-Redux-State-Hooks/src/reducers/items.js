@@ -1,6 +1,11 @@
-import itemsTypes from '../actions/items';
+import itemsTypes from '../actions/itemTypes';
 
-const reducer = (state = [], action) => {
+const initialState = [{
+  id: 1,
+  description: 'test',
+  value: '123'
+}]
+const reducer = (state = initialState, action) => {
   let newItems;
   switch (action.type) {
     case itemsTypes.ADD_ITEM:

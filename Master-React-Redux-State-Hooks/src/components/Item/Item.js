@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React  from 'react';
 import { Grid, Icon, Segment } from 'semantic-ui-react';
 import { useDispatch } from 'react-redux';
 import { removeItemAction } from '../../actions/items';
@@ -8,7 +8,7 @@ const Item = (props) => {
   const { id, description, value, isExpense = false } = props;
   const dispatch = useDispatch();
   return (
-    <Fragment>
+    <>
       <Segment color={isExpense ? 'red' : 'green'}>
         <Grid columns={3} textAlign='right'>
           <Grid.Row>
@@ -33,7 +33,7 @@ const Item = (props) => {
           </Grid.Row>
         </Grid>
       </Segment>
-    </Fragment>
+    </>
   );
 }
 

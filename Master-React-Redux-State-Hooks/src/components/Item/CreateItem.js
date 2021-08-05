@@ -4,7 +4,7 @@ import ButtonSaveOrCancel from '../ButtonSaveOrCancel';
 import ItemForm from './ItemForm';
 import itemDetails from '../../hooks/itemDetails';
 
-const NewItem = () => {
+const CreateItem = () => {
   const {
     description,
     setDescription,
@@ -31,4 +31,4 @@ const NewItem = () => {
   );
 }
 
-export default NewItem;
+export default CreateItem;
