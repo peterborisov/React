@@ -17,27 +17,13 @@ const ItemDetails = (desc = '', val = '', isExp = true) => {
   }, [desc, val, isExp]);
 
   const updateItem = (id) => {
-    dispatch(
-      updateItemAction(id, {
-        id,
-        description,
-        value,
-        isExpense,
-      })
-    );
+    dispatch(updateItemAction(id, { id, description, value, isExpense, }));
     dispatch(closeEditModal());
     resetValues();
   }
 
   const addItem = () => {
-    dispatch(
-      addItemAction({
-        id: uuidv4(),
-        description,
-        value,
-        isExpense,
-      })
-    );
+    dispatch(addItemAction({id: uuidv4(),description,value,isExpense,}));
     resetValues();
   }
 

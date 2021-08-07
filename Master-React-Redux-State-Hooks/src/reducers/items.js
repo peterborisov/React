@@ -5,11 +5,12 @@ const initialState = [{
   description: 'test',
   value: '123'
 }]
+
 const reducer = (state = initialState, action) => {
   let newItems;
   switch (action.type) {
     case itemsTypes.ADD_ITEM:
-      newItems = state.concat({ ...action.payload });
+      newItems = [...state, action.payload];
       return newItems;
     case itemsTypes.REMOVE_ITEM:
       newItems = state.filter((item) => item.id !== action.payload.id);
@@ -23,4 +24,5 @@ const reducer = (state = initialState, action) => {
       return state;
   }
 };
+
 export default reducer;

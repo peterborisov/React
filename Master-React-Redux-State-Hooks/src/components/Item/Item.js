@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import { Grid, Icon, Segment } from 'semantic-ui-react';
 import { useDispatch } from 'react-redux';
 import { removeItemAction } from '../../actions/items';
@@ -7,6 +7,7 @@ import { openEditModal } from '../../actions/modals';
 const Item = (props) => {
   const { id, description, value, isExpense = false } = props;
   const dispatch = useDispatch();
+
   return (
     <>
       <Segment color={isExpense ? 'red' : 'green'}>
