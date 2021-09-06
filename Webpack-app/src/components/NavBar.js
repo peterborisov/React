@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NotesContext } from "./NoteContext";
+import { NotesContext } from "./Note/NoteContext";
 
 const Navbar = () => {
     const { notes} = useContext(NotesContext)

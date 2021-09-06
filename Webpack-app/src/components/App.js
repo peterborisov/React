@@ -1,7 +1,7 @@
 import Navbar from './NavBar';
-import Notelist from './NoteList';
-import NoteContextProvider from './NoteContext';
-import NoteForm from './NoteForm';
+import Notelist from './Note/NoteList';
+import NoteContextProvider from './Note/NoteContext';
+import NoteForm from './Note/NoteForm';
 
 const App = () => {
   return (

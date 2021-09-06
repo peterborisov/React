@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 let mode = "development";
 
@@ -14,7 +14,7 @@ module.exports = {
       {
         test: /\.(s[ac]|c)ss$/i,
         use: [
-          // MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           "css-loader",
           "postcss-loader",
           "sass-loader",
@@ -30,7 +30,7 @@ module.exports = {
     ],
   },
   plugins: [
-    // new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin(
       {template: "./src/index.html"}
     )
