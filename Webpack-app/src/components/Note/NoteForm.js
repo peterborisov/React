@@ -12,13 +12,11 @@ const NoteForm = () => {
         setTitle('');
         setDescription('');
     }
-    
+
     return (
         <form onSubmit={handleSubmit}>
-            <input type='text' placeholder='Enter title'
-                value={title} onChange={(e) => setTitle(e.target.value)} />
-            <input type='text' placeholder='Enter description'
-                value={description} onChange={(e) => setDescription(e.target.value)} />
+            <input type='text' placeholder='Enter title' value={title} onChange={(e) => setTitle(e.target.value)} />
+            <input type='text' placeholder='Enter description' value={description} onChange={(e) => setDescription(e.target.value)} />
             <input type='submit' value='Add note' />
         </form>
     );

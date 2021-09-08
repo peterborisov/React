@@ -1,25 +1,11 @@
 import { createContext, useReducer } from "react";
-import { v1 as uuidv1 } from 'uuid';
+import { reducer } from './reducer';
 
 //In component useContext(NotesContext)
 export const NotesContext = createContext();
 
-const reducer = (state, action) => {
-    switch (action.type) {
-        case "ADD_NOTE":
-            return [...state, {
-                title: action.note.title,
-                description: action.note.description,
-                id: uuidv1()
-            }]
-        case "DELETE_NOTE":
-            return state.filter(note => note.id !== action.id)
-        default:
-            throw new Error();
-    }
-};
+const initialState = [];
 
-const initialState = []
 //Wrap App component with context
 const NoteContextProvider = ({ children }) => {
     const [notes, dispatch] = useReducer(reducer, initialState);
