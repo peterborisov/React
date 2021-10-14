@@ -1,5 +1,6 @@
-import { useContext, useState } from "react";
+import { useContext, useState, memo } from "react";
 import { NotesContext } from "./NoteContext";
+import FormInput from "../FormInput";
 
 const NoteForm = () => {
     const { dispatch } = useContext(NotesContext);
@@ -13,13 +14,21 @@ const NoteForm = () => {
         setDescription('');
     }
 
+    const handleTitleChange = (e) => {
+        setTitle(e.target.value)
+    }
+
+    const handleDescriptionChange = (e) => {
+        setDescription(e.target.value)
+    }
+
     return (
         <form onSubmit={handleSubmit}>
-            <input type='text' placeholder='Enter title' value={title} onChange={(e) => setTitle(e.target.value)} />
-            <input type='text' placeholder='Enter description' value={description} onChange={(e) => setDescription(e.target.value)} />
+            <FormInput placeholder='Enter title' value={title} handleOnchange={handleTitleChange} />
+            <FormInput placeholder='Enter description' value={description} handleOnchange={handleDescriptionChange} />
             <input type='submit' value='Add note' />
         </form>
     );
 }
 
-export default NoteForm;
+export default memo(NoteForm);

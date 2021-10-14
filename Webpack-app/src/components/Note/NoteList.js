@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, memo } from "react";
 import NoteDetails from './NoteDetails';
 import { NotesContext } from './NoteContext';
 
@@ -16,4 +16,4 @@ const Notelist = () => {
   )
 };
 
-export default Notelist;
+export default memo(Notelist);
