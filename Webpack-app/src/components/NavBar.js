@@ -1,12 +1,11 @@
-import { useContext } from "react";
-import { NotesContext } from "./Note/NoteContext";
+import { useNotes } from "../provider/NoteContext";
 
 const Navbar = () => {
-    const { notes } = useContext(NotesContext);
-    
-    return (
-        <h1>Number on notes you have: {notes.length}</h1>
-    )
+  const { value } = useNotes();
+
+  return (
+    <h1>Number on notes you have: {value.length}</h1>
+  )
 }
 
 export default Navbar;

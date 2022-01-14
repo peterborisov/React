@@ -1,4 +1,5 @@
 ## Webpack App
+
 1. npm i
 
 ### Development Build
@@ -19,4 +20,6 @@ npm run watch
 npm start
 ```
 
-## React context api
+## React Context provider hook pattern
+
+https://nimblewebdeveloper.com/blog/react-context-provider-hook-pattern

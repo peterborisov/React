@@ -1,17 +1,15 @@
-import { useContext, memo } from "react";
-import { NotesContext } from "./NoteContext";
+import { memo } from "react";
+import { useNotes } from "../../provider/NoteContext";
 
 const NoteDetails = ({ note }) => {
-  const { dispatch } = useContext(NotesContext);
+  const { actions } = useNotes();
   const handleDelete = () => {
-    dispatch({ type: 'DELETE_NOTE', id: note.id });
+    actions({ type: 'DELETE_NOTE', id: note.id });
   }
 
   return (
     <div onClick={handleDelete}>
-      <p>{note.title}</p>
-      <p>{note.description}</p>
-      <p>{note.id}</p>
+      <p>title: {note.title}, description: {note.description}</p>
     </div>
   );
 };

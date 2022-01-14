@@ -1,13 +1,13 @@
-import { useContext, memo } from "react";
+import { memo } from "react";
 import NoteDetails from './NoteDetails';
-import { NotesContext } from './NoteContext';
+import { useNotes } from '../../provider/NoteContext';
 
 const Notelist = () => {
-  const { notes } = useContext(NotesContext);
-  return notes.length ? (
+  const { value } = useNotes();
+  return value.length ? (
     <div>
       <h1>Notes</h1>
-      {notes.map((note, index) => {
+      {value.map((note, index) => {
         return (<NoteDetails key={index} note={note} />);
       })}
     </div>
