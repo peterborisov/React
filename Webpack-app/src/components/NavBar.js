@@ -1,10 +1,10 @@
 import { useNotes } from "../provider/NoteContext";
 
 const Navbar = () => {
-  const { value } = useNotes();
+  const { state } = useNotes();
 
   return (
-    <h1>Number on notes you have: {value.length}</h1>
+    <h1>Number on notes you have: {state.length}</h1>
   )
 }
 

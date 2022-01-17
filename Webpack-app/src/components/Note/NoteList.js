@@ -1,14 +1,14 @@
 import { memo } from "react";
-import NoteDetails from './NoteDetails';
+import Note from './Note';
 import { useNotes } from '../../provider/NoteContext';
 
-const Notelist = () => {
-  const { value } = useNotes();
-  return value.length ? (
+const NoteList = () => {
+  const { state } = useNotes();
+  return state.length ? (
     <div>
       <h1>Notes</h1>
-      {value.map((note, index) => {
-        return (<NoteDetails key={index} note={note} />);
+      {state.map((note, index) => {
+        return (<Note key={index} note={note} />);
       })}
     </div>
   ) : (
@@ -16,4 +16,4 @@ const Notelist = () => {
   )
 };
 
-export default memo(Notelist);
+export default memo(NoteList);

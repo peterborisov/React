@@ -5,8 +5,7 @@ export const reducer = (state, action) => {
   switch (action.type) {
     case actionType.addNote:
       return [...state, {
-        title: action.note.title,
-        description: action.note.description,
+        ...action.payload,
         id: uuidv1()
       }]
     case actionType.deleteNote:

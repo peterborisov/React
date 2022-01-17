@@ -7,9 +7,9 @@ const initialState = [];
 
 //Wrap App component with context
 export const NoteContextProvider = ({ children }) => {
-  const [value, actions] = useReducer(reducer, initialState);
+  const [state, actions] = useReducer(reducer, initialState);
   return (
-    <NotesContext.Provider value={{ value, actions }}>
+    <NotesContext.Provider value={{ state, actions }}>
       {children}
     </NotesContext.Provider>
   )
