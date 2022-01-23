@@ -3,13 +3,15 @@ import { reducer } from './reducer';
 
 export const NotesContext = createContext();
 
-const initialState = [];
+const initialState = {
+  notes: []
+};
 
 //Wrap App component with context
-export const NoteContextProvider = ({ children }) => {
-  const [state, actions] = useReducer(reducer, initialState);
+export const NoteProvider = ({ children }) => {
+  const [value, actions] = useReducer(reducer, initialState);
   return (
-    <NotesContext.Provider value={{ state, actions }}>
+    <NotesContext.Provider value={{ value, actions }}>
       {children}
     </NotesContext.Provider>
   )

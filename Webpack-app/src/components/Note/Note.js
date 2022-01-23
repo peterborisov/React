@@ -1,12 +1,12 @@
 import { memo } from "react";
-import { useNotes } from "../../provider/NoteContext";
+import { useNotes } from "../../provider";
 
 const Note = ({ note }) => {
   const { actions } = useNotes();
 
   return (
     <div onClick={() => actions({ type: 'DELETE_NOTE', id: note.id })}>
-      <p>title: {note.title}, description: {note.description}</p>
+      <p>{JSON.stringify(note)}</p>
     </div>
   );
 };
