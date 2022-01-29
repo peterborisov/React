@@ -3,9 +3,8 @@ import { useNotes } from "../../provider";
 
 const Note = ({ note }) => {
   const { actions } = useNotes();
-
   return (
-    <div onClick={() => actions({ type: 'DELETE_NOTE', id: note.id })}>
+    <div onClick={() => actions.deleteNote({ id: note.id })}>
       <p>{JSON.stringify(note)}</p>
     </div>
   );

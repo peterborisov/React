@@ -1,5 +1,5 @@
-const actionType = {
-    addNote: 'ADD_NOTE',
-    deleteNote: 'DELETE_NOTE'
+const ACTION_TYPES = {
+  addNote: 'ADD_NOTE',
+  deleteNote: 'DELETE_NOTE'
 }
-export default actionType;
+export default ACTION_TYPES;

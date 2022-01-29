@@ -1,5 +1,8 @@
-import { createContext, useReducer, useContext } from "react";
+import { createContext, useContext } from "react";
+
 import { reducer } from './reducer';
+import { useContextReducer } from "../helpers";
+import ACTION_TYPES from "./actionType";
 
 export const NotesContext = createContext();
 
@@ -8,10 +11,10 @@ const initialState = {
 };
 
 //Wrap App component with context
-export const NoteProvider = ({ children }) => {
-  const [value, actions] = useReducer(reducer, initialState);
+export const NoteProvider = ({ children, actionTypes = ACTION_TYPES }) => {
+  const { value } = useContextReducer({ actionTypes, initialState, reducer })
   return (
-    <NotesContext.Provider value={{ value, actions }}>
+    <NotesContext.Provider value={value}>
       {children}
     </NotesContext.Provider>
   )

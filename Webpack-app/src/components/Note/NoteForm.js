@@ -1,9 +1,8 @@
-import { useReducer, useState, memo } from "react";
+import { useReducer, memo } from "react";
 import TextField from "@material-ui/core/TextField";
 import { v1 as uuidv1 } from 'uuid';
 
 import { useNotes } from "../../provider";
-
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -47,7 +46,10 @@ const NoteForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    actions({ type: 'ADD_NOTE', payload: { title, description, isNew, id: uuidv1() } });
+    const payload = {
+      title, description, isNew, id: uuidv1()
+    }
+    actions.addNote(payload)
     dispatch({ type: "reset" })
   };
 
