@@ -1,12 +1,6 @@
 {
   "users": [
     {
-      "id": 2,
-      "name": "name Two",
-      "username": 2,
-      "email": "aaa@aaa.a"
-    },
-    {
       "name": "mortisha",
       "username": "adams",
       "email": "aa@aa.bg",
@@ -17,6 +11,18 @@
       "username": "l",
       "email": "l",
       "id": 4
+    },
+    {
+      "name": "k",
+      "username": "k",
+      "email": "k",
+      "id": 5
+    },
+    {
+      "name": "j",
+      "username": "j",
+      "email": "j",
+      "id": 6
     }
   ]
 }

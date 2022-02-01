@@ -10,4 +10,5 @@ const User = ({ user, onDelete }) => {
     </div>
   )
 }
+
 export default memo(User);

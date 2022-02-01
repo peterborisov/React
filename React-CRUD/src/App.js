@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Users from './components/Users'
+import UserList from './components/UserList'
 import UserCreate from './components/UserCreate'
 
 const App = () => {
@@ -13,11 +13,9 @@ const App = () => {
       const usersFromServer = await fetchUsers()
       setUsers(usersFromServer)
     }
-
     getUsers()
   }, [])
 
-  // Fetch Users
   const fetchUsers = async () => {
     const res = await fetch('http://localhost:5000/users')
     const data = await res.json()
@@ -25,7 +23,6 @@ const App = () => {
     return data
   }
 
-  // Add User
   const userCreate = async (user) => {
     const res = await fetch('http://localhost:5000/users', {
       method: 'POST',
@@ -41,12 +38,10 @@ const App = () => {
     window.location.href = '/';
   }
 
-  // Delete user
   const deleteUser = async (id) => {
     const res = await fetch(`http://localhost:5000/users/${id}`, {
       method: 'DELETE',
     })
-    //We should control the response status to decide if we will change the state or not.
     res.status === 200
       ? setUsers(users.filter((user) => user.id !== id))
       : alert('Error Deleting This User')
@@ -56,7 +51,7 @@ const App = () => {
     <Router>
       <div>
         <Routes>
-          <Route path='/' element={<Users users={users} onDelete={deleteUser} />} />
+          <Route path='/' element={<UserList users={users} deleteUser={deleteUser} />} />
           <Route path='/create' element={<UserCreate userCreate={userCreate} />} />
         </Routes>
       </div>
