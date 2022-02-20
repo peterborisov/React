@@ -4,13 +4,12 @@ import User from './User';
 import {
   Button,
   Container,
-  Table,
-  TableBody,
 } from '@material-ui/core';
+import { useUsers } from "../reducer";
 
 
-const UserList = ({ users, deleteUser }) => {
-
+const UserList = () => {
+  const { users } = useUsers();
   return (
     <>
       <Container maxWidth="lg">
@@ -19,13 +18,9 @@ const UserList = ({ users, deleteUser }) => {
             CREATE
           </Button>
         </Link>
-        <Table aria-label="simple table">
-          <TableBody>
-            {users.map((user, index) => (
-              <User key={index} user={user} onDelete={deleteUser} />
-            ))}
-          </TableBody>
-        </Table>
+        {users.map((user, index) => (
+          <User key={index} user={user} />
+        ))}
       </Container>
     </>
   );

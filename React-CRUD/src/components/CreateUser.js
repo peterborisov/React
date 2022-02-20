@@ -1,8 +1,11 @@
 import React, { memo, useState } from "react";
 import { Button, TextField } from '@material-ui/core';
+import { useUsers } from '../reducer';
 
 
-const UserCreate = ({ userCreate }) => {
+const CreateUser = () => {
+
+  const { onUserCreate } = useUsers();
 
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
@@ -15,7 +18,7 @@ const UserCreate = ({ userCreate }) => {
       username,
       email,
     }
-    userCreate(payload)
+    onUserCreate(payload);
   }
 
   return (
@@ -42,4 +45,4 @@ const UserCreate = ({ userCreate }) => {
   );
 }
 
-export default memo(UserCreate)
+export default memo(CreateUser)
